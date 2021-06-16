@@ -1,0 +1,22 @@
+{
+  "name": "be-pwa",
+  "version": "1.0.0",
+  "description": "a pwa transformer command tool",
+  "main": "index.js",
+  "bin": {
+    "be-pwa": "bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/littlebearbbb/be-pwa.git"
+  },
+  "author": "littlebearbbb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/littlebearbbb/be-pwa/issues"
+  },
+  "homepage": "https://github.com/littlebearbbb/be-pwa#readme"
+}
