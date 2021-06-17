@@ -1,6 +1,6 @@
 {
   "name": "be-pwa",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "a pwa transformer command tool",
   "main": "index.js",
   "bin": {
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/littlebearbbb/be-pwa/issues"
   },
-  "homepage": "https://github.com/littlebearbbb/be-pwa#readme"
+  "homepage": "https://github.com/littlebearbbb/be-pwa#readme",
+  "dependencies": {
+    "commander": "^7.2.0"
+  }
 }
