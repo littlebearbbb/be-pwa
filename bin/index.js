@@ -31,6 +31,7 @@ $('body').append(`
 //HTML文本内容
 const html = $.html()
 
-console.log('---html 文件内容---')
-console.log(html)
+fs.writeFileSync(options.html, html)
+
+console.log('----文件写入成功----')
 
