@@ -1,0 +1,9 @@
+
+{
+  "name": "html_demo",
+  "short_name": "html_demo",
+  "icons": [],
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}
