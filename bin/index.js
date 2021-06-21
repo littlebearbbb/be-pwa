@@ -6,12 +6,13 @@ const cheerio = require('cheerio')
 const manifestDemo = 
 `
 {
-  "name": "html_demo",
-  "short_name": "html_demo",
+  "name": "auto-pwa",
+  "short_name": "auto-pwa",
+  "theme_color":"#242726",
   "icons": [],
-  "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "start_url":".",
+  "display": "fullscreen",
+  "background_color":"#000000"
 }
 `
 
@@ -87,7 +88,7 @@ $('body').append(`
 //HTML文本内容
 const html = $.html()
 
-// fs.writeFileSync(options.html, html)
+fs.writeFileSync(options.html, html)
 
 const pathArray = options.html.split('/')
 
