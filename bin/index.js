@@ -9,7 +9,11 @@ const manifestDemo =
   "name": "auto-pwa",
   "short_name": "auto-pwa",
   "theme_color":"#242726",
-  "icons": [],
+  "icons": [{
+    "src": "./img/icons/pwaIcon-144x144.png",
+    "type": "image/png",
+    "sizes": "144x144"
+  }],
   "start_url":".",
   "display": "fullscreen",
   "background_color":"#000000"
@@ -99,12 +103,10 @@ const parentPath = pathArray.join('/') + '/'
 fs.writeFileSync(`${parentPath}manifest.json`, manifestDemo)
 fs.writeFileSync(`${parentPath}sw.js`, serviceWorkerDemo)
 
-console.log('-----parentPath-----')
-console.log(parentPath)
+const copyFileSync = (fromUrl, toUrl) => {
+  fs.writeFileSync(toUrl, fs.readFileSync(fromUrl))
+}
 
+copyFileSync(`${parentPath}img/icons/pwaIcon-144x144.png`, './pwaIcon-144x144.png')
 
-
-console.log('----HTML文件写入成功----')
-
-
-
+console.log('----转换成功----')
