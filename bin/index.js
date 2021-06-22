@@ -103,21 +103,24 @@ const parentPath = pathArray.join('/')
 fs.writeFileSync(`${parentPath}/manifest.json`, manifestDemo)
 fs.writeFileSync(`${parentPath}/sw.js`, serviceWorkerDemo)
 
-const copyFileSync = (fromUrl, toUrl) => {
-  fs.writeFileSync(toUrl, fs.readFileSync(fromUrl))
-}
-
 const copyFromPathArr = ['img', 'icons']
 
 copyFromPathArr.reduce((acc, v) => {
-  if (!fs.existsSync(`${parentPath}/${acc}`)) {
+  acc += `/${v}`
+  
+  if (!fs.existsSync(`${parentPath}${acc}`)) {
     fs.mkdirSync(`${parentPath}${acc}`)
   }
-  return acc + `/${v}`
+  return acc
 }, '')
 
 const copyFromPath = `${parentPath}/${copyFromPathArr.join('/')}/pwaIcon-144x144.png`
 
-copyFileSync(copyFromPath, './pwaIcon-144x144.png')
-
+const readStream = fs.createReadStream(`${__dirname}/pwaIcon-144x144.png`)
+const writeStream = fs.createWriteStream(copyFromPath)
+readStream.pipe(writeStream)
 console.log('----转换成功----')
+
+
+
+
